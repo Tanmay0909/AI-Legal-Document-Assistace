@@ -42,14 +42,15 @@
         }
 
         .lawyer-card {
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-            display: flex;
-            flex-direction: column;
-            max-width: 300px;
-            margin: 20px;
-        }
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    max-width: 600px;
+    margin: 20px;
+    display: none; /* Hide lawyer cards by default */
+}
+
 
         .lawyer-card img {
             max-width: 100%;
@@ -74,6 +75,64 @@
         li {
             margin-bottom: 10px;
         }
+        /* Search Form Styles */
+.search-form {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    margin: 20px;
+    max-width: 400px;
+    width: 50%
+}
+
+.search-form h2 {
+    margin: 0 0 15px;
+    font-size: 20px;
+    color: #333;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+select, input[type="number"] {
+    width: 100%;
+    padding: 10px 0px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+select:focus, input[type="number"]:focus {
+    border-color: #007bff; /* Highlight input fields when focused */
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    display: block; /* Center the button horizontally */
+    margin: 0 auto; /* Center the button horizontally */
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker shade when hovered */
+}
+
     </style>
     <title>Legal Services</title>
 </head>
@@ -84,13 +143,33 @@
         </div>
         <div class="overlay"></div>
     </header>
+    <div class="search-form">
+    <h2>Find a Lawyer</h2>
+    <form id="lawyer-search-form">
+        <div class="form-group">
+            <label for="specialization">Specialization:</label>
+            <select id="specialization" name="specialization">
+                <option value="">Any</option>
+                <option value="Criminal Defense">Criminal Defense</option>
+                <option value="Family Law">Family Law</option>
+                <option value="Real Estate Law">Real Estate Law</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="experience">Years of Experience:</label>
+            <input type="number" id="experience" name="experience" min="0">
+        </div>
+        <button type="button" onclick="filterLawyers()">Search</button>
+    </form>
+</div>
+
 
     <div class="cards-container">
         <div class="lawyer-card">
             <div class="lawyer-details">
                 <h2>Lawyer 1</h2>
                 <p>Specialization: Criminal Defense</p>
-                <p>Experience: 10+ years</p>
+                <p>Experience: 10 years</p>
                 <p>Contact:</p>
                 <ul>
                     <li>Email: lawyer1@email.com</li>
@@ -104,7 +183,7 @@
             <div class="lawyer-details">
                 <h2>Lawyer 2</h2>
                 <p>Specialization: Family Law</p>
-                <p>Experience: 8+ years</p>
+                <p>Experience: 8 years</p>
                 <p>Contact:</p>
                 <ul>
                     <li>Email: lawyer2@email.com</li>
@@ -118,7 +197,7 @@
             <div class="lawyer-details">
                 <h2>Lawyer 3</h2>
                 <p>Specialization: Real Estate Law</p>
-                <p>Experience: 12+ years</p>
+                <p>Experience: 12 years</p>
                 <p>Contact:</p>
                 <ul>
                     <li>Email: lawyer3@email.com</li>
@@ -128,5 +207,28 @@
             </div>
         </div>
     </div>
+    <script>
+      function filterLawyers() {
+          const specializationInput = document.getElementById("specialization").value;
+          const experienceInput = parseInt(document.getElementById("experience").value);
+
+          const lawyerCards = document.querySelectorAll(".lawyer-card");
+
+          lawyerCards.forEach(card => {
+              const specialization = card.querySelector("p:nth-child(2)").textContent.split(": ")[1];
+              const experience = parseInt(card.querySelector("p:nth-child(3)").textContent.split(": ")[1]);
+
+              if (
+                  (specializationInput === "" || specialization === specializationInput) &&
+                  (isNaN(experienceInput) || experience >= experienceInput)
+              ) {
+                  card.style.display = "block";
+              } else {
+                  card.style.display = "none";
+              }
+          });
+      }
+  </script>
+
 </body>
 </html>

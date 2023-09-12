@@ -4,9 +4,10 @@
   <meta charset="utf-8">
   <title>Summary</title>
   <style>
+    /* New styles for the entire page */
     body {
-      background-color: #f2f2f2; /* Set a light background color for the body */
-      color: #333; /* Set the text color to a dark gray */
+      background-image: url('sum.jpg'); /* Set a blue background color for the body */
+      color: white; /* Set the text color to white */
       text-align: center; /* Center align the text */
       padding: 20px; /* Add some padding to create space */
       font-size: 16px; /* Set the default font size */
@@ -28,31 +29,9 @@
       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add a text shadow */
     }
 
-    .intro {
-      background-color: #3498db; /* Set a blue background color for the introduction section */
-      color: white; /* Set text color to white */
-      padding: 40px; /* Add padding to the introduction section */
-    }
-
-    .intro p  {
-      font-size: 20px;
-      line-height: 1.5;
-      max-width: 80%; /* Limit the maximum width of the paragraph */
-      margin: 0 auto; /* Center align the paragraph */
-    }
-
-    .intro pre {
-      white-space: pre-wrap;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-      margin-top: 45px;
-      margin-bottom: -90px;
-    }
-
     section {
-      background-color: white; /* Set a white background color for content sections */
+      background-color: #ecf0f1; /* Set a light gray background color for content sections */
+      color: #333; /* Set text color to dark gray */
       padding: 20px; /* Add padding to content sections */
       margin-bottom: 20px; /* Add margin between sections */
       border-radius: 10px; /* Add curved edges to content sections */
@@ -87,7 +66,8 @@
     <h2>Section 1</h2>
     <div class="">
       <p><pre id="document-content">Summary of the Legal Document...</pre><p>
-      <a href="Advice.html" class="special-link" target="_blank">Get Legal Advice</a>
+      <a href="Advice.html" class="special-link" target="_blank">Legal Advice</a>
+      <a href="https://docs.google.com/document/d/1kGqiSf-u84ufxNvH6jDubPMn-7pTX9ZjddqB0UOqF1s/edit" download="legal_document.docx" class="special-link">Download</a>
     </div>
 <script>
     fetch('https://script.google.com/macros/s/AKfycbxEDc4UdDseGtWaF0B_rBxs8bimK75xFd8UsnXJK9P6r_EuTtOjfTliDBC65rRGg8Qo/exec')
