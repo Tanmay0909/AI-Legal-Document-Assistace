@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('legal.jpeg'); /* Add your background image URL here */
+            background-size: cover;
+            background-repeat: no-repeat;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .header {
+            text-align: center;
+            color: #fff;
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .overlay {
+            background-color: rgba(0, 0, 0, 0.6);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .cards-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .lawyer-card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            max-width: 300px;
+            margin: 20px;
+        }
+
+        .lawyer-card img {
+            max-width: 100%;
+            border-radius: 8px 8px 0 0;
+        }
+
+        .lawyer-details {
+            padding: 20px;
+        }
+
+        h2 {
+            margin: 0;
+            font-size: 20px;
+            color: #333;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+    </style>
+    <title>Legal Services</title>
+</head>
+<body>
+    <header>
+        <div class="header">
+            <h1>Legal Advice</h1>
+        </div>
+        <div class="overlay"></div>
+    </header>
+
+    <div class="cards-container">
+        <div class="lawyer-card">
+            <div class="lawyer-details">
+                <h2>Lawyer 1</h2>
+                <p>Specialization: Criminal Defense</p>
+                <p>Experience: 10+ years</p>
+                <p>Contact:</p>
+                <ul>
+                    <li>Email: lawyer1@email.com</li>
+                    <li>Phone: (123) 456-7890</li>
+                    <li>Office Address: 123 Main Street, City, State</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="lawyer-card">
+            <div class="lawyer-details">
+                <h2>Lawyer 2</h2>
+                <p>Specialization: Family Law</p>
+                <p>Experience: 8+ years</p>
+                <p>Contact:</p>
+                <ul>
+                    <li>Email: lawyer2@email.com</li>
+                    <li>Phone: (456) 789-1234</li>
+                    <li>Office Address: 456 Oak Street, City, State</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="lawyer-card">
+            <div class="lawyer-details">
+                <h2>Lawyer 3</h2>
+                <p>Specialization: Real Estate Law</p>
+                <p>Experience: 12+ years</p>
+                <p>Contact:</p>
+                <ul>
+                    <li>Email: lawyer3@email.com</li>
+                    <li>Phone: (789) 123-4567</li>
+                    <li>Office Address: 789 Elm Street, City, State</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
